@@ -1,3 +1,3 @@
 # Gerasimos-Iordanis
-The official website of Gerasimos Iordanis
+my personal website
 !!!! UNDER CONSTRUCTION !!!!
