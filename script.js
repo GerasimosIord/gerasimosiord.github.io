@@ -80,8 +80,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillsSection = document.querySelector('#skills');
     if (skillsSection) skillObserver.observe(skillsSection);
 
+    // ─── Typewriter effect ───────────────────────────────────
+    const typeTarget = document.getElementById('typewriter');
+    if (typeTarget) {
+        const text = 'Bridging biology and computation to uncover insights in genetics & neuroscience.';
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                typeTarget.textContent += text[i];
+                i++;
+                setTimeout(type, 30 + Math.random() * 20);
+            } else {
+                typeTarget.classList.add('done');
+            }
+        }
+
+        setTimeout(type, 1000);
+    }
+
+    // ─── Project card 3D tilt + spotlight ───────────────────
+    document.querySelectorAll('.project').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const cx = rect.width  / 2;
+            const cy = rect.height / 2;
+            const dx = (x - cx) / cx;
+            const dy = (y - cy) / cy;
+
+            card.style.transform = `perspective(700px) rotateY(${dx * 5}deg) rotateX(${-dy * 5}deg) translateY(-6px)`;
+            card.style.setProperty('--mx', `${(x / rect.width)  * 100}%`);
+            card.style.setProperty('--my', `${(y / rect.height) * 100}%`);
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.removeProperty('--mx');
+            card.style.removeProperty('--my');
+        });
+    });
+
     // ─── Form submission with toast ──────────────────────────
-    const form = document.getElementById('contact-form');
+    const form  = document.getElementById('contact-form');
     const toast = document.getElementById('toast');
 
     form.addEventListener('submit', () => {
