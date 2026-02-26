@@ -1,81 +1,106 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ─── Theme Toggle ───────────────────────────────────────
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Set dark mode as default
-    body.classList.remove('light-mode');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('light-mode');
-        themeToggle.innerHTML = body.classList.contains('light-mode') 
-            ? '<i class="fas fa-moon"></i>' 
+        const isLight = body.classList.contains('light-mode');
+        themeToggle.innerHTML = isLight
+            ? '<i class="fas fa-moon"></i>'
             : '<i class="fas fa-sun"></i>';
     });
 
-    // Smooth scrolling for navigation links
+    // ─── Navbar scroll effect ────────────────────────────────
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ─── Smooth scroll navigation ────────────────────────────
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerOffset = 80; // Adjust this value based on your header height
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
+            const target = document.querySelector(href);
+            if (target) {
+                const offset = navbar.offsetHeight + 16;
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: target.getBoundingClientRect().top + window.pageYOffset - offset,
                     behavior: 'smooth'
                 });
+                navLinks.classList.remove('open');
             }
         });
     });
 
-    // Animate sections and skills on scroll
-    const observer = new IntersectionObserver((entries) => {
+    // ─── Mobile hamburger ────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+
+    // Close nav when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navbar.contains(e.target)) {
+            navLinks.classList.remove('open');
+        }
+    });
+
+    // ─── Section scroll animations ───────────────────────────
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                if (entry.target.classList.contains('skill')) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
+                entry.target.classList.add('visible');
+                sectionObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('section').forEach(el => sectionObserver.observe(el));
+
+    // ─── Skills stagger animation ────────────────────────────
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skills = entry.target.querySelectorAll('.skill');
+                skills.forEach((skill, i) => {
+                    setTimeout(() => skill.classList.add('visible'), i * 90);
+                });
+                skillObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('section, .skill').forEach(element => {
-        element.classList.add('hidden');
-        observer.observe(element);
-    });
+    const skillsSection = document.querySelector('#skills');
+    if (skillsSection) skillObserver.observe(skillsSection);
 
-    // Form submission (using Formspree)
+    // ─── Form submission with toast ──────────────────────────
     const form = document.getElementById('contact-form');
-    form.addEventListener('submit', (e) => {
-        // This won't prevent the form from submitting to Formspree
+    const toast = document.getElementById('toast');
+
+    form.addEventListener('submit', () => {
         setTimeout(() => {
-            alert('Thank you for your message! I will get back to you soon.');
+            toast.classList.add('show');
             form.reset();
-        }, 1000);
+            setTimeout(() => toast.classList.remove('show'), 4200);
+        }, 800);
     });
 
-    // Add this to your existing script.js file
+    // ─── Scroll to top button ────────────────────────────────
+    const scrollBtn = document.getElementById('scroll-to-top');
 
-    const scrollToTopButton = document.getElementById('scroll-to-top');
+    window.addEventListener('scroll', () => {
+        scrollBtn.classList.toggle('visible', window.pageYOffset > 300);
+    }, { passive: true });
 
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollToTopButton.classList.add('visible');
-        } else {
-            scrollToTopButton.classList.remove('visible');
-        }
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    scrollToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
 });

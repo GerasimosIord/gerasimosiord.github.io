@@ -3,127 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio of Gerasimos Iordanis - Biologist & Bioinformatics Specialist">
-    <title>Gerasimos Iordanis - Biologist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Personal website of Gerasimos Iordanis - Biologist & Bioinformatics Specialist">
+    <title>Gerasimos Iordanis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Gerasimos Iordanis, BSc</h1>
-            <p>Biologist | Bioinformatics Specialist</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+
+    <!-- Sticky Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">GI</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div id="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun"></i>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="avatar">
+                <span>GI</span>
+            </div>
+            <h1 class="hero-title">Gerasimos <span class="gradient-text">Iordanis</span></h1>
+            <p class="hero-subtitle">
+                Biologist <span class="separator">·</span> Bioinformatics Specialist <span class="separator">·</span> BSc
+            </p>
+            <p class="hero-tagline">Bridging biology and computation to uncover insights in genetics &amp; neuroscience</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-folder-open"></i> View My Work
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </header>
 
     <main class="container">
+
+        <!-- About -->
         <section id="about">
-            <h2>About Me</h2>
-            <div class="section-content">
-                <p>As a biologist specializing in bioinformatics, I bring a unique blend of biological knowledge and computational skills to scientific research. My expertise in data analysis, statistical modeling, and programming enables me to tackle complex biological problems efficiently.</p>
-                <p>I'm passionate about leveraging artificial intelligence and machine learning in the fields of genetics and neuroscience. My strong foundation in statistics and data visualization allows me to extract meaningful insights from large-scale biological datasets.</p>
-                <p>With a keen interest in cutting-edge technologies and a solid grounding in biological sciences, I'm well-equipped to contribute to innovative research projects and drive scientific discoveries.</p>
+            <div class="section-header">
+                <span class="section-tag">About</span>
+                <h2>Who I Am</h2>
+            </div>
+            <div class="section-content about-content">
+                <div class="about-text">
+                    <p>As a biologist specializing in bioinformatics, I bring a unique blend of biological knowledge and computational skills to scientific research. My expertise in data analysis, statistical modeling, and programming enables me to tackle complex biological problems efficiently.</p>
+                    <p>I'm passionate about leveraging artificial intelligence and machine learning in the fields of genetics and neuroscience. My strong foundation in statistics and data visualization allows me to extract meaningful insights from large-scale biological datasets.</p>
+                    <p>With a keen interest in cutting-edge technologies and a solid grounding in biological sciences, I'm well-equipped to contribute to innovative research projects and drive scientific discoveries.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <i class="fas fa-dna"></i>
+                        <h4>Bioinformatics</h4>
+                        <p>Genomics &amp; data analysis</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>AI &amp; ML</h4>
+                        <p>Genetics &amp; neuroscience</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Statistics</h4>
+                        <p>Data visualization</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-code-branch"></i>
+                        <h4>Open Source</h4>
+                        <p>Building &amp; contributing</p>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Skills -->
         <section id="skills">
-            <h2>Skills</h2>
+            <div class="section-header">
+                <span class="section-tag">Expertise</span>
+                <h2>Skills</h2>
+            </div>
             <div class="section-content">
                 <div class="skills-container">
                     <div class="skill" data-skill="R">
-                        <i class="fas fa-code"></i>
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
                         <span>R Language</span>
-                        <p>Data Analysis</p>
+                        <p>Data Analysis &amp; Statistics</p>
                     </div>
                     <div class="skill" data-skill="Python">
-                        <i class="fab fa-python"></i>
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
                         <span>Python</span>
-                        <p>Scripting & Analysis</p>
+                        <p>Scripting &amp; ML Pipelines</p>
                     </div>
                     <div class="skill" data-skill="Video">
-                        <i class="fas fa-video"></i>
+                        <div class="skill-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
                         <span>Video Editing</span>
                         <p>Content Creation</p>
                     </div>
                     <div class="skill" data-skill="Social">
-                        <i class="fas fa-share-alt"></i>
+                        <div class="skill-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
                         <span>Social Media</span>
-                        <p>Management</p>
+                        <p>Strategy &amp; Management</p>
                     </div>
                     <div class="skill" data-skill="AI">
-                        <i class="fas fa-robot"></i>
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
                         <span>Prompt Engineering</span>
-                        <p>for LLMs</p>
+                        <p>LLM Optimization</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Projects -->
         <section id="projects">
-            <h2>Projects</h2>
+            <div class="section-header">
+                <span class="section-tag">Work</span>
+                <h2>Projects</h2>
+            </div>
             <div class="section-content">
                 <div class="project-grid">
                     <div class="project">
+                        <div class="project-header">
+                            <span class="project-tag">AI · Research</span>
+                            <a href="https://github.com/GerasimosIord" target="_blank" class="project-link" aria-label="View on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                         <h3>AI-Assisted Research</h3>
-                        <p>Implemented LLM-based tools to accelerate literature review processes in biological research.</p>
+                        <p>Implemented LLM-based tools to accelerate literature review processes in biological research, significantly reducing manual search time.</p>
+                        <div class="project-tags">
+                            <span>LLM</span><span>Python</span><span>Biology</span>
+                        </div>
                     </div>
                     <div class="project">
-                        <h3>Content Creation & Social Media Management</h3>
-                        <p>Managed social media accounts for well-known content creators in Greece. Created captivating short documentaries on various topics, showcasing extensive video editing skills.</p>
+                        <div class="project-header">
+                            <span class="project-tag">Content · Media</span>
+                        </div>
+                        <h3>Content Creation &amp; Social Media</h3>
+                        <p>Managed social media accounts for well-known Greek content creators. Created captivating short documentaries showcasing extensive video editing skills.</p>
+                        <div class="project-tags">
+                            <span>Video Editing</span><span>Social Media</span>
+                        </div>
                     </div>
                     <div class="project">
+                        <div class="project-header">
+                            <span class="project-tag">Mobile · Health</span>
+                            <a href="https://github.com/GerasimosIord" target="_blank" class="project-link" aria-label="View on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                         <h3>OCD Exposure Therapy App</h3>
-                        <p>Developed a mobile application for exposure therapy targeting Obsessive-Compulsive Disorder (OCD). Available on GitHub.</p>
+                        <p>Developed a mobile application for exposure therapy targeting Obsessive-Compulsive Disorder. Designed with therapeutic best practices in mind.</p>
+                        <div class="project-tags">
+                            <span>Mobile</span><span>Healthcare</span><span>Open Source</span>
+                        </div>
                     </div>
                     <div class="project">
-                        <h3>Minimal Budget Tracking App</h3>
-                        <p>Created a simple, user-friendly application for personal budget tracking. Open-source and available on GitHub.</p>
+                        <div class="project-header">
+                            <span class="project-tag">App · Finance</span>
+                            <a href="https://github.com/GerasimosIord" target="_blank" class="project-link" aria-label="View on GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <h3>Minimal Budget Tracker</h3>
+                        <p>Created a simple, user-friendly application for personal budget tracking. Open-source project focused on minimalism and ease of use.</p>
+                        <div class="project-tags">
+                            <span>Finance</span><span>Open Source</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Contact -->
         <section id="contact">
-            <h2>Contact</h2>
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2>Get In Touch</h2>
+            </div>
             <div class="section-content">
+                <p class="contact-intro">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
                 <form id="contact-form" action="https://formspree.io/f/xdknwlzb" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project or question..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
             </div>
         </section>
+
     </main>
 
     <footer>
-        <div class="container">
+        <div class="footer-line"></div>
+        <div class="container footer-inner">
             <div id="social-links">
-                <a href="https://github.com/GerasimosIord" target="_blank" aria-label="GitHub Profile">
+                <a href="https://github.com/GerasimosIord" target="_blank" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://linkedin.com/in/gerasimos-iordanis" target="_blank" aria-label="LinkedIn Profile">
+                <a href="https://linkedin.com/in/gerasimos-iordanis" target="_blank" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://x.com/ger_iordanis" target="_blank" aria-label="Twitter Profile">
+                <a href="https://x.com/ger_iordanis" target="_blank" aria-label="Twitter / X">
                     <i class="fab fa-twitter"></i>
                 </a>
             </div>
-            <p>&copy; 2025 Gerasimos Iordanis. All rights reserved.</p>
+            <p class="footer-copy">&copy; 2025 Gerasimos Iordanis</p>
         </div>
     </footer>
 
-    <div id="theme-toggle">
-        <i class="fas fa-sun"></i>
+    <!-- Toast notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Message sent! I'll get back to you soon.</span>
     </div>
 
     <button id="scroll-to-top" aria-label="Scroll to top">
