@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal website of Gerasimos Iordanis - Biologist & Bioinformatics Specialist">
+    <meta name="description" content="Gerasimos Iordanis — Biologist, Bioinformatician &amp; Researcher. University of Patras.">
     <title>Gerasimos Iordanis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Sticky Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">GI<span class="logo-dot">.</span></a>
+            <a href="#" class="nav-logo">G. Iordanis</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -32,58 +32,35 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header id="hero">
-        <div class="hero-bg"></div>
         <div class="hero-grid" aria-hidden="true"></div>
-        <div class="container hero-content">
-            <div class="status-badge">
-                <span class="status-dot"></span>
-                Available for collaboration
-            </div>
-            <div class="avatar">
-                <span>GI</span>
-            </div>
-            <h1 class="hero-title">Gerasimos <span class="gradient-text">Iordanis</span></h1>
-            <p class="hero-subtitle">
-                Biologist <span class="separator">·</span> Bioinformatics Specialist <span class="separator">·</span> BSc
-            </p>
-            <p class="hero-tagline" id="typewriter" aria-label="Bridging biology and computation to uncover insights in genetics &amp; neuroscience."></p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-folder-open"></i> View My Work
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Get In Touch
-                </a>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-location">
+                    <i class="fas fa-map-pin"></i> Patras, Greece
+                </span>
+                <div class="hero-name">
+                    <h1 class="name-first">Gerasimos</h1>
+                    <h1 class="name-last">Iordanis<span class="name-dot">.</span></h1>
+                </div>
+                <p class="hero-role">
+                    Biologist <span class="sep">·</span> Bioinformatician <span class="sep">·</span> Researcher
+                </p>
+                <p class="hero-tagline" id="typewriter" aria-label="Tracing the invisible architecture of life — one dataset at a time."></p>
+                <div class="hero-cta">
+                    <a href="#research" class="btn btn-primary">
+                        <i class="fas fa-flask"></i> My Research
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                </div>
             </div>
         </div>
         <a href="#about" class="scroll-indicator" aria-label="Scroll down">
             <i class="fas fa-chevron-down"></i>
         </a>
     </header>
-
-    <!-- Marquee ticker strip -->
-    <div class="marquee-strip" aria-hidden="true">
-        <div class="marquee-track">
-            <span>BIOINFORMATICS</span><span class="mdot">◆</span>
-            <span>GENETICS</span><span class="mdot">◆</span>
-            <span>PYTHON</span><span class="mdot">◆</span>
-            <span>R LANGUAGE</span><span class="mdot">◆</span>
-            <span>MACHINE LEARNING</span><span class="mdot">◆</span>
-            <span>NEUROSCIENCE</span><span class="mdot">◆</span>
-            <span>OPEN SOURCE</span><span class="mdot">◆</span>
-            <span>DATA ANALYSIS</span><span class="mdot">◆</span>
-            <span>BIOINFORMATICS</span><span class="mdot">◆</span>
-            <span>GENETICS</span><span class="mdot">◆</span>
-            <span>PYTHON</span><span class="mdot">◆</span>
-            <span>R LANGUAGE</span><span class="mdot">◆</span>
-            <span>MACHINE LEARNING</span><span class="mdot">◆</span>
-            <span>NEUROSCIENCE</span><span class="mdot">◆</span>
-            <span>OPEN SOURCE</span><span class="mdot">◆</span>
-            <span>DATA ANALYSIS</span><span class="mdot">◆</span>
-        </div>
-    </div>
 
     <main class="container">
 
@@ -93,92 +70,125 @@
                 <span class="section-tag">About</span>
                 <h2>Who I Am</h2>
             </div>
-            <div class="section-content about-content">
+            <div class="about-layout">
                 <div class="about-text">
-                    <p>As a biologist specializing in bioinformatics, I bring a unique blend of biological knowledge and computational skills to scientific research. My expertise in data analysis, statistical modeling, and programming enables me to tackle complex biological problems efficiently.</p>
-                    <p>I'm passionate about leveraging artificial intelligence and machine learning in the fields of genetics and neuroscience. My strong foundation in statistics and data visualization allows me to extract meaningful insights from large-scale biological datasets.</p>
-                    <p>With a keen interest in cutting-edge technologies and a solid grounding in biological sciences, I'm well-equipped to contribute to innovative research projects and drive scientific discoveries.</p>
+                    <p>I'm a biology undergraduate at the <strong>University of Patras</strong>, completing a thesis on gut microbiome dynamics in hematopoietic stem cell transplantation patients. I use Oxford Nanopore full-length 16S rRNA sequencing to trace how the human microbiome collapses — and sometimes rebuilds — after one of medicine's most extreme interventions.</p>
+                    <p>Before my thesis, I spent two months as a bioinformatics intern at <strong>ΕΚΕΒΕ "Alexander Fleming"</strong>, where I built R analysis pipelines across 797 clinical samples. I've also co-authored a book chapter on nutrigenomics and neurological disorders.</p>
+                    <p>Outside the lab, I think a lot about the philosophy of scientific discovery, the nature of craft, and what it means to build something that actually matters — whether in research, software, or business.</p>
+                    <div class="about-meta">
+                        <span><i class="fas fa-graduation-cap"></i> BSc Biology · University of Patras</span>
+                        <span><i class="fas fa-microscope"></i> Thesis on HSCT gut microbiome · Oxford Nanopore</span>
+                        <span><i class="fas fa-seedling"></i> Considering MSc in Biostatistics or Bioinformatics</span>
+                    </div>
                 </div>
-                <div class="about-highlights">
+                <div class="about-aside">
                     <div class="highlight-card">
                         <i class="fas fa-dna"></i>
+                        <h4>Microbiome Research</h4>
+                        <p>Full-length 16S rRNA · Nanopore · Clinical cohorts</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-chart-bar"></i>
                         <h4>Bioinformatics</h4>
-                        <p>Genomics &amp; data analysis</p>
+                        <p>R pipelines · Statistical modeling · Visualization</p>
                     </div>
                     <div class="highlight-card">
-                        <i class="fas fa-brain"></i>
-                        <h4>AI &amp; ML</h4>
-                        <p>Genetics &amp; neuroscience</p>
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Entrepreneurial</h4>
+                        <p>AI automation for Greek SMEs · Technical consulting</p>
                     </div>
                     <div class="highlight-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Statistics</h4>
-                        <p>Data visualization</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-code-branch"></i>
-                        <h4>Open Source</h4>
-                        <p>Building &amp; contributing</p>
+                        <i class="fas fa-book-open"></i>
+                        <h4>Curious Mind</h4>
+                        <p>Philosophy · Basketball · Fragrance · Music</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Research -->
+        <section id="research">
+            <div class="section-header" data-num="02">
+                <span class="section-tag">Research</span>
+                <h2>Scientific Work</h2>
+            </div>
+
+            <div class="research-feature">
+                <div class="research-meta">
+                    <span class="research-badge">Active · BSc Thesis 2024–2025</span>
+                    <span class="research-tools">Oxford Nanopore · Full-length 16S rRNA · R</span>
+                </div>
+                <h3>Gut Microbiome Dynamics in HSCT Patients</h3>
+                <p>Tracking the collapse and potential recovery of the human gut microbiome following hematopoietic stem cell transplantation — using full-length 16S rRNA sequencing to achieve species-level resolution across the transplant timeline. The findings reveal dramatic disruption: a near-total loss of diversity driven by antibiotic conditioning and immunosuppression, with opportunistic pathogens rapidly filling the ecological vacuum.</p>
+                <div class="research-stats">
+                    <div class="stat">
+                        <span class="stat-number">70<span class="stat-unit">%</span></span>
+                        <span class="stat-label">Reduction in genus<br>richness by D+30</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">19<span class="stat-arrow">→</span>58<span class="stat-unit">%</span></span>
+                        <span class="stat-label">Pathobiont expansion<br>post-transplant</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">797</span>
+                        <span class="stat-label">Samples analyzed<br>at ΕΚΕΒΕ Fleming</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <span class="pub-type"><i class="fas fa-book"></i> Book Chapter · Co-author</span>
+                <h4>Nutrigenomics &amp; Neurological Disorders</h4>
+                <p>Examining the relationship between dietary compounds, gene expression, and neurological disease — connecting molecular biology with clinical nutrition research.</p>
+            </div>
+
+        </section>
+
         <!-- Skills -->
         <section id="skills">
-            <div class="section-header" data-num="02">
+            <div class="section-header" data-num="03">
                 <span class="section-tag">Expertise</span>
                 <h2>Skills</h2>
             </div>
             <div class="skills-container">
-                <div class="skill" data-skill="R">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                <div class="skill">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
                     <code class="skill-lang"><span class="prompt">$</span> r_language</code>
                     <span>R Language</span>
-                    <p>Data Analysis &amp; Statistics</p>
+                    <p>Bioinformatics pipelines, statistical modeling, ggplot2</p>
                 </div>
-                <div class="skill" data-skill="Python">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
+                <div class="skill">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
                     <code class="skill-lang"><span class="prompt">$</span> python</code>
                     <span>Python</span>
-                    <p>Scripting &amp; ML Pipelines</p>
+                    <p>Scripting, ML pipelines, automation workflows</p>
                 </div>
-                <div class="skill" data-skill="Video">
-                    <div class="skill-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <code class="skill-lang"><span class="prompt">$</span> video_editing</code>
-                    <span>Video Editing</span>
-                    <p>Content Creation</p>
+                <div class="skill">
+                    <div class="skill-icon"><i class="fas fa-dna"></i></div>
+                    <code class="skill-lang"><span class="prompt">$</span> seq_analysis</code>
+                    <span>Sequence Analysis</span>
+                    <p>16S rRNA, Nanopore, amplicon workflows</p>
                 </div>
-                <div class="skill" data-skill="Social">
-                    <div class="skill-icon">
-                        <i class="fas fa-share-alt"></i>
-                    </div>
-                    <code class="skill-lang"><span class="prompt">$</span> social_media</code>
-                    <span>Social Media</span>
-                    <p>Strategy &amp; Management</p>
-                </div>
-                <div class="skill" data-skill="AI">
-                    <div class="skill-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
+                <div class="skill">
+                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
                     <code class="skill-lang"><span class="prompt">$</span> prompt_eng</code>
                     <span>Prompt Engineering</span>
-                    <p>LLM Optimization</p>
+                    <p>LLM optimization, AI workflow design</p>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon"><i class="fas fa-video"></i></div>
+                    <code class="skill-lang"><span class="prompt">$</span> content</code>
+                    <span>Content Creation</span>
+                    <p>Video editing, social media strategy</p>
                 </div>
             </div>
         </section>
 
         <!-- Projects -->
         <section id="projects">
-            <div class="section-header" data-num="03">
-                <span class="section-tag">Work</span>
-                <h2>Projects</h2>
+            <div class="section-header" data-num="04">
+                <span class="section-tag">Projects</span>
+                <h2>Other Work</h2>
             </div>
             <div class="project-grid">
                 <div class="project">
@@ -188,20 +198,20 @@
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
-                    <h3>AI-Assisted Research</h3>
-                    <p>Implemented LLM-based tools to accelerate literature review processes in biological research, significantly reducing manual search time.</p>
+                    <h3>AI-Assisted Literature Review</h3>
+                    <p>LLM-based tools that accelerate literature search in biological research — significantly cutting time spent on manual database queries.</p>
                     <div class="project-tags">
                         <span>LLM</span><span>Python</span><span>Biology</span>
                     </div>
                 </div>
                 <div class="project">
                     <div class="project-header">
-                        <span class="project-tag">Content · Media</span>
+                        <span class="project-tag">Business · AI</span>
                     </div>
-                    <h3>Content Creation &amp; Social Media</h3>
-                    <p>Managed social media accounts for well-known Greek content creators. Created captivating short documentaries showcasing extensive video editing skills.</p>
+                    <h3>AI Automation for Greek SMEs</h3>
+                    <p>Building AI-powered automation services tailored for small businesses in Greece — bridging technical capability with practical business needs.</p>
                     <div class="project-tags">
-                        <span>Video Editing</span><span>Social Media</span>
+                        <span>AI</span><span>Automation</span><span>Greek Market</span>
                     </div>
                 </div>
                 <div class="project">
@@ -212,7 +222,7 @@
                         </a>
                     </div>
                     <h3>OCD Exposure Therapy App</h3>
-                    <p>Developed a mobile application for exposure therapy targeting Obsessive-Compulsive Disorder. Designed with therapeutic best practices in mind.</p>
+                    <p>Mobile application for exposure-response prevention therapy. Open-source, designed with clinical principles in mind.</p>
                     <div class="project-tags">
                         <span>Mobile</span><span>Healthcare</span><span>Open Source</span>
                     </div>
@@ -225,7 +235,7 @@
                         </a>
                     </div>
                     <h3>Minimal Budget Tracker</h3>
-                    <p>Created a simple, user-friendly application for personal budget tracking. Open-source project focused on minimalism and ease of use.</p>
+                    <p>Focused personal finance app. Open-source, built around clarity over feature bloat.</p>
                     <div class="project-tags">
                         <span>Finance</span><span>Open Source</span>
                     </div>
@@ -235,12 +245,12 @@
 
         <!-- Contact -->
         <section id="contact">
-            <div class="section-header" data-num="04">
+            <div class="section-header" data-num="05">
                 <span class="section-tag">Contact</span>
                 <h2>Get In Touch</h2>
             </div>
-            <div class="section-content">
-                <p class="contact-intro">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+            <div class="contact-card">
+                <p class="contact-intro">Whether it's a research question, collaboration idea, or something else entirely — I'm happy to hear from you.</p>
                 <form id="contact-form" action="https://formspree.io/f/xdknwlzb" method="POST">
                     <div class="form-row">
                         <div class="form-group">
@@ -254,11 +264,10 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell me about your project or question..." required></textarea>
+                        <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
+                        Send Message <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
             </div>
@@ -280,14 +289,13 @@
                     <i class="fab fa-twitter"></i>
                 </a>
             </div>
-            <p class="footer-copy">&copy; 2025 Gerasimos Iordanis</p>
+            <p class="footer-copy">&copy; 2025 Gerasimos Iordanis &mdash; Patras, Greece</p>
         </div>
     </footer>
 
-    <!-- Toast notification -->
     <div id="toast" class="toast">
         <i class="fas fa-check-circle"></i>
-        <span>Message sent! I'll get back to you soon.</span>
+        <span>Message sent. I'll be in touch soon.</span>
     </div>
 
     <button id="scroll-to-top" aria-label="Scroll to top">

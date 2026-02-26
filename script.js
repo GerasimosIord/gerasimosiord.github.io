@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('open');
     });
 
-    // Close nav when clicking outside
     document.addEventListener('click', (e) => {
         if (!navbar.contains(e.target)) {
             navLinks.classList.remove('open');
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 sectionObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('section').forEach(el => sectionObserver.observe(el));
 
@@ -68,9 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const skills = entry.target.querySelectorAll('.skill');
-                skills.forEach((skill, i) => {
-                    setTimeout(() => skill.classList.add('visible'), i * 90);
+                entry.target.querySelectorAll('.skill').forEach((skill, i) => {
+                    setTimeout(() => skill.classList.add('visible'), i * 100);
                 });
                 skillObserver.unobserve(entry.target);
             }
@@ -83,44 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // ─── Typewriter effect ───────────────────────────────────
     const typeTarget = document.getElementById('typewriter');
     if (typeTarget) {
-        const text = 'Bridging biology and computation to uncover insights in genetics & neuroscience.';
+        const text = 'Tracing the invisible architecture of life \u2014 one dataset at a time.';
         let i = 0;
 
         function type() {
             if (i < text.length) {
                 typeTarget.textContent += text[i];
                 i++;
-                setTimeout(type, 30 + Math.random() * 20);
+                // Slightly variable speed — feels more human
+                const pause = text[i - 1] === '\u2014' ? 260 : 34 + Math.random() * 22;
+                setTimeout(type, pause);
             } else {
                 typeTarget.classList.add('done');
             }
         }
 
-        setTimeout(type, 1000);
+        setTimeout(type, 1100);
     }
-
-    // ─── Project card 3D tilt + spotlight ───────────────────
-    document.querySelectorAll('.project').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const cx = rect.width  / 2;
-            const cy = rect.height / 2;
-            const dx = (x - cx) / cx;
-            const dy = (y - cy) / cy;
-
-            card.style.transform = `perspective(700px) rotateY(${dx * 5}deg) rotateX(${-dy * 5}deg) translateY(-6px)`;
-            card.style.setProperty('--mx', `${(x / rect.width)  * 100}%`);
-            card.style.setProperty('--my', `${(y / rect.height) * 100}%`);
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-            card.style.removeProperty('--mx');
-            card.style.removeProperty('--my');
-        });
-    });
 
     // ─── Form submission with toast ──────────────────────────
     const form  = document.getElementById('contact-form');
