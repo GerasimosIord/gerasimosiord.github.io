@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ─── Typewriter effect ───────────────────────────────────
     const typeTarget = document.getElementById('typewriter');
     if (typeTarget) {
-        const text = 'Tracing the invisible architecture of life \u2014 one dataset at a time.';
+        const text = 'Quantifying biological complexity \u2014 from sequencing reads to causal structure.';
         let i = 0;
 
         function type() {
