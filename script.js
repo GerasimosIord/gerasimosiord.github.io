@@ -159,9 +159,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     statObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.4 });
+        }, { threshold: 0.25, rootMargin: '0px 0px -8% 0px' });
         statObserver.observe(statsBlock);
     }
+
+    // ─── Project cards: cursor-following spotlight ───────────
+    document.querySelectorAll('.project').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+            card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+        });
+    });
 
     // ─── Staggered card reveals ──────────────────────────────
     [
