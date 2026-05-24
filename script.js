@@ -122,4 +122,65 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // ─── Scroll progress bar ─────────────────────────────────
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+        const updateProgress = () => {
+            const h = document.documentElement;
+            const max = h.scrollHeight - h.clientHeight;
+            const ratio = max > 0 ? h.scrollTop / max : 0;
+            progressBar.style.transform = `scaleX(${ratio})`;
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+
+    // ─── Count-up for research stats ─────────────────────────
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+    function animateCount(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 1500;
+        const start = performance.now();
+        (function tick(now) {
+            const p = Math.min((now - start) / duration, 1);
+            el.textContent = Math.round(easeOutCubic(p) * target);
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = target;
+        })(start);
+    }
+
+    const statsBlock = document.querySelector('.research-stats');
+    if (statsBlock) {
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.count').forEach(animateCount);
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+        statObserver.observe(statsBlock);
+    }
+
+    // ─── Staggered card reveals ──────────────────────────────
+    [
+        { container: '.project-grid', items: '.project',        step: 90 },
+        { container: '.about-aside',  items: '.highlight-card', step: 80 }
+    ].forEach(({ container, items, step }) => {
+        const el = document.querySelector(container);
+        if (!el) return;
+        const obs = new IntersectionObserver((entries, o) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll(items).forEach((item, i) => {
+                        setTimeout(() => item.classList.add('in'), i * step);
+                    });
+                    o.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        obs.observe(el);
+    });
+
 });

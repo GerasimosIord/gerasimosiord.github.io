@@ -11,6 +11,8 @@
 </head>
 <body>
 
+    <div id="scroll-progress" aria-hidden="true"></div>
+
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">G. Iordanis</a>
@@ -122,15 +124,15 @@
                 <p>Tracking the collapse and potential recovery of the human gut microbiome following hematopoietic stem cell transplantation. The sequencing is full-length 16S rRNA via Oxford Nanopore; the analysis is statistical — mixed-effects models for longitudinal diversity, generalized linear models for pathobiont abundance, and DAG-guided reasoning about whether microbial shifts are mediators or consequences of clinical outcomes. The findings reveal dramatic disruption: near-total diversity loss driven by antibiotic conditioning and immunosuppression, with opportunistic pathogens rapidly filling the ecological vacuum.</p>
                 <div class="research-stats">
                     <div class="stat">
-                        <span class="stat-number">70<span class="stat-unit">%</span></span>
+                        <span class="stat-number"><span class="count" data-target="70">0</span><span class="stat-unit">%</span></span>
                         <span class="stat-label">Reduction in genus<br>richness by D+30</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">19<span class="stat-arrow">→</span>58<span class="stat-unit">%</span></span>
+                        <span class="stat-number"><span class="count" data-target="19">0</span><span class="stat-arrow">→</span><span class="count" data-target="58">0</span><span class="stat-unit">%</span></span>
                         <span class="stat-label">Pathobiont expansion<br>post-transplant</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">797</span>
+                        <span class="stat-number"><span class="count" data-target="797">0</span></span>
                         <span class="stat-label">Samples analyzed<br>at ΕΚΕΒΕ Fleming</span>
                     </div>
                 </div>
@@ -153,33 +155,43 @@
             <div class="skills-container">
                 <div class="skill">
                     <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="skill-body">
+                        <span class="skill-name">Biostatistics</span>
+                        <p>Mixed-effects models, GLMs, survival analysis, longitudinal &amp; repeated-measures data</p>
+                    </div>
                     <code class="skill-lang"><span class="prompt">$</span> biostatistics</code>
-                    <span>Biostatistics</span>
-                    <p>Mixed models, GLMs, survival analysis, longitudinal data</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon"><i class="fas fa-code"></i></div>
-                    <code class="skill-lang"><span class="prompt">$</span> r_language</code>
-                    <span>R Language</span>
-                    <p>lme4, survival, vegan, ggplot2, tidyverse, Bioconductor</p>
                 </div>
                 <div class="skill">
                     <div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="skill-body">
+                        <span class="skill-name">Causal Inference</span>
+                        <p>DAGs, propensity scoring, mediation analysis, counterfactual reasoning</p>
+                    </div>
                     <code class="skill-lang"><span class="prompt">$</span> causal_inf</code>
-                    <span>Causal Inference</span>
-                    <p>DAGs, propensity scoring, mediation analysis, counterfactuals</p>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <div class="skill-body">
+                        <span class="skill-name">R Language</span>
+                        <p>lme4, survival, vegan, tidyverse, ggplot2, Bioconductor</p>
+                    </div>
+                    <code class="skill-lang"><span class="prompt">$</span> r_language</code>
                 </div>
                 <div class="skill">
                     <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <div class="skill-body">
+                        <span class="skill-name">Python &amp; ML</span>
+                        <p>scikit-learn, pandas, feature engineering, cross-validation</p>
+                    </div>
                     <code class="skill-lang"><span class="prompt">$</span> python_ml</code>
-                    <span>Python &amp; ML</span>
-                    <p>scikit-learn, pandas, feature engineering, model validation</p>
                 </div>
                 <div class="skill">
                     <div class="skill-icon"><i class="fas fa-dna"></i></div>
+                    <div class="skill-body">
+                        <span class="skill-name">Bioinformatics</span>
+                        <p>Full-length 16S rRNA, Oxford Nanopore, amplicon workflows, QIIME2</p>
+                    </div>
                     <code class="skill-lang"><span class="prompt">$</span> bioinformatics</code>
-                    <span>Bioinformatics</span>
-                    <p>Full-length 16S rRNA, Nanopore, amplicon workflows, QIIME2</p>
                 </div>
             </div>
         </section>
